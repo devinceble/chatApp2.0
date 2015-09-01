@@ -8,3 +8,4 @@ meteor-platform
 bootstrap
 iron:router
 accounts-password
+check

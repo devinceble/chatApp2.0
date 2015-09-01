@@ -1,6 +1,6 @@
 Meteor.subscribe("messages");
 
-Template.appChat.helpers({
+Template.chatTemplate.helpers({
 	messages: function () {
 		return Messages.find({},
 			{sort:
@@ -12,15 +12,15 @@ Template.appChat.helpers({
 	}
 });
 
-Template.appChat.events({
+Template.chatTemplate.events({
 	"click .btnDelete": function (event) {
-		Messages.remove(this._id);
+		Meteor.call("delMessage", this._id);
 		return false;
 	},
 	"keyup .txtText": function (event) {
 		if(event.keyCode == 13){
-			Messages.insert({
-				name: $(".txtName").val(),
+			Meteor.call("addMessage", {
+				name: Meteor.user().username,
 				text: $(".txtText").val(),
 				createdAt: new Date()
 			});

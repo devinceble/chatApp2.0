@@ -1,4 +1,4 @@
-<template name="appChat">
+<template name="chatTemplate">
 	{{#each messages}}
 		<div class="alert alert-info">
 			<b> {{name}} </b> {{text}}
@@ -9,7 +9,7 @@
 	{{/each}}
 
 	<form class="form-inline">
-		<input class="form-control txtName" placeholder="Username">
+		<input class="form-control txtName" placeholder="Username" readonly="true" value="{{currentUser.username}}">
 		<input class="form-control txtText" placeholder="Type a Message"/>
 	</form>
 </template>
