@@ -1,10 +1,12 @@
+Meteor.subscribe("messages");
+
 Template.appChat.helpers({
 	messages: function () {
-		return Messages.find({}, 
-			{sort: 
+		return Messages.find({},
+			{sort:
 				{
 					createdAt: -1
-				}, 
+				},
 			limit: 5
 		});
 	}
@@ -22,7 +24,7 @@ Template.appChat.events({
 				text: $(".txtText").val(),
 				createdAt: new Date()
 			});
-			
+
 			$(".txtText").val("");
 			$(".txtText").focus();
 		}
