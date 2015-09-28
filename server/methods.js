@@ -14,7 +14,9 @@ Meteor.methods({
     });
   },
 
-
+  //Post Message
+  // message_data -object
+  // used @ chat-template.js
   addMessage: function(message_data){
       if(this.userId){
         check(message_data, Object);
@@ -24,7 +26,10 @@ Meteor.methods({
       }
   },
 
-
+  //Delete Message
+  // message -object
+  // used @ chat-template.js
+  // only Message(s) of current user can be deleted.
   delMessage: function(message) {
       if(this.userId && Meteor.user().username == message.name){
         Messages.remove(message._id);

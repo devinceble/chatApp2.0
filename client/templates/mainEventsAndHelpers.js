@@ -1,3 +1,5 @@
+// Register Underscore on Spacebars
+// used @ *-template.html files
 Template.registerHelper('_', function() {
 	return _;
 });
