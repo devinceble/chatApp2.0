@@ -1,15 +1,43 @@
 <template name="chatTemplate">
-	{{#each messages}}
-		<div class="alert alert-info">
-			<b> {{name}} </b> {{text}}
-			<button class="btn btn-danger btnDelete">
-				&times;
-			</button>
-		</div>
-	{{/each}}
+	<div class="container">
 
-	<form class="form-inline">
-		<input class="form-control txtName" placeholder="Username" readonly="true" value="{{currentUser.username}}">
-		<input class="form-control txtText" placeholder="Type a Message"/>
-	</form>
+
+		{{#each messages}}
+			<div class="alert {{#if _.isEqual currentUser.username name}}alert-info{{else}}alert-success text-right{{/if}}">
+				<div class="media">
+					{{#if _.isEqual currentUser.username name}}
+				  <div class="media-left media-middle">
+				    <img class="media-object" src="{{profile.url}}" alt="profile image" width="80px" height="80px">
+				  </div>
+					{{/if}}
+				  <div class="media-body">
+						<b> {{name}} </b><br/>
+						<p style="font-size: 16px;">
+							{{text}}
+						</p>
+						<p>
+							{{livestamp createdAt}}
+						</p>
+				  </div>
+					{{#if _.isEqual currentUser.username name}}
+					<div class="media-right media-middle">
+							<button class="btn btn-danger btnDelete" style="">
+								&times;
+							</button>
+					</div>
+					{{else}}
+					<div class="media-right media-middle">
+				    <img class="media-object" src="{{profile.url}}" alt="profile image" width="80px" height="80px">
+				  </div>
+					{{/if}}
+				</div>
+			</div>
+		{{/each}}
+		<p></p>
+		<form class="frmText">
+			<input class="form-control input-lg txtText" placeholder="Type a Message"/>
+		</form>
+		<p></p>
+	</div>
+
 </template>

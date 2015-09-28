@@ -18,13 +18,16 @@ Meteor.methods({
   addMessage: function(message_data){
       if(this.userId){
         check(message_data, Object);
+        message_data.createdAt = new Date();
+        message_data.userid = this.userId
         Messages.insert(message_data);
       }
   },
-  delMessage: function(message_id) {
-      if(this.userId){
-        check(message_id, String);
-        Messages.remove(message_id);
+
+
+  delMessage: function(message) {
+      if(this.userId && Meteor.user().username == message.name){
+        Messages.remove(message._id);
       }
   }
 

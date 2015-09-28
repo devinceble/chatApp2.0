@@ -4,7 +4,18 @@
 	</title>
 </head>
 <body>
-	<div class="page-header">
-		<h1>Meteor Chat App</h1>
+	<div class="container">
+		<div class="page-header">
+			<h1>
+				<a href="/" class="header">Meteor Chat App</a>
+				{{#if currentUser}}
+					- {{currentUser.username}}
+					<button type="button" class="btn btn-primary" id="btnLogout">Logout</button>
+					<a href="/avatar" class="btn btn-default" id="btnAvatar">Change Avatar</a>
+				{{else}}
+					<a href="/signup" class="btn btn-default" id="btnAvatar">Register</a>
+				{{/if}}
+			</h1>
+		</div>
 	</div>
 </body>
