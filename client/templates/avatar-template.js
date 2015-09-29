@@ -1,4 +1,10 @@
-Meteor.subscribe("profiles");
+//Change to Optimize Subscription
+// Meteor.subscribe("profiles");
+
+Template.avatarTemplate.onCreated(function(){
+  this.subscribe("profiles");
+});
+
 
 Template.avatarTemplate.events({
   "change #profile_photo": function (event){

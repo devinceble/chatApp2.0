@@ -1,4 +1,12 @@
-Meteor.subscribe("messages");
+//Change to Optimize Subscription
+// Meteor.subscribe("profiles");
+// Meteor.subscribe("messages");
+
+Template.chatTemplate.onCreated(function(){
+	//The other optimization of subscription is subscribing on iron routers callback waitOn.
+	this.subscribe("profiles");
+	this.subscribe("messages");
+});
 
 function scrollTo(){
 	$(".txtText").val("");
