@@ -6,6 +6,9 @@ Template.registerHelper('_', function() {
 
 Template.body.events({
 	"click #btnLogout": function(){
+		if(Meteor.isCordova){
+			navigator.app.exitApp();
+		}
 		Meteor.logout();
 	}
 });

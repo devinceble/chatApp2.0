@@ -8,11 +8,6 @@ App.info({
 });
 
 App.icons({
-  // iOS
-  'iphone': 'resources/icons/icon-60x60.png',
-  'iphone_2x': 'resources/icons/icon-60x60@2x.png',
-  'ipad': 'resources/icons/icon-76x76.png',
-  'ipad_2x': 'resources/icons/icon-76x76@2x.png',
 
   // Android
   'android_ldpi': 'resources/icons/icon-36x36.png',
@@ -22,14 +17,6 @@ App.icons({
 });
 
 App.launchScreens({
-  // iOS
-  'iphone': 'resources/splash/splash-320x480.png',
-  'iphone_2x': 'resources/splash/splash-320x480@2x.png',
-  'iphone5': 'resources/splash/splash-320x568@2x.png',
-  'ipad_portrait': 'resources/splash/splash-768x1024.png',
-  'ipad_portrait_2x': 'resources/splash/splash-768x1024@2x.png',
-  'ipad_landscape': 'resources/splash/splash-1024x768.png',
-  'ipad_landscape_2x': 'resources/splash/splash-1024x768@2x.png',
 
   // Android
   'android_ldpi_portrait': 'resources/splash/splash-200x320.png',
@@ -41,8 +28,5 @@ App.launchScreens({
   'android_xhdpi_portrait': 'resources/splash/splash-720x1280.png',
   'android_xhdpi_landscape': 'resources/splash/splash-1280x720.png'
 });
-
-App.setPreference('StatusBarOverlaysWebView', 'false');
-App.setPreference('StatusBarBackgroundColor', '#000000');
 
 App.accessRule("blob:*");
